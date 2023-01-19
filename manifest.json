@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
   "name": "CasinoStreamAPI Helper",
-  "version": "1.0",
+  "version": "1.0.1",
+  "description":"The Ultimate Casino Streaming Companion",
   "icons": {
     "16": "images/icon.png",
     "32": "images/icon.png",
@@ -18,7 +19,6 @@
     "service_worker": "background.js"
   },
   "permissions": [
-    "tabs","storage","notifications",
-    "*coxino.go.ro*","https://static.casino.guru*"
+    "tabs","storage","notifications"
   ]
 }

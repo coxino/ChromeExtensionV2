@@ -64,7 +64,8 @@ function sendNotification(_title, _message){
 
 function sendToken(token){
     chrome.runtime.sendMessage(token, (response) => { 
-        console.log("Sent Token")
+        console.log("Sent Token");
+        return;
     });
 }
 
