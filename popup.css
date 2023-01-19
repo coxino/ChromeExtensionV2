@@ -16,13 +16,12 @@ limitations under the License.
 
 body {
   background-color: bisque;
-  width: 10rem;  
+  width: 15rem;  
   height: 5rem; 
 }
 
 .update-box{  
-  display: grid;
-  grid-template-columns: repeat(2,1fr); 
+  display: flex;
 }
 
 img{
@@ -48,6 +47,39 @@ img{
   color: red;
 }
 
+.hold{
+  color: orange;
+}
+
 .success{
   color: green;
+}
+
+.hero {
+  background-color: rgba(34, 58, 58, 0.397); 
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+.hero img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+}
+
+.hero-content {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  z-index: 1;
+}
+
+.hero h1.name {
+  font-size:larger;
+  font-weight: bold;
+}
+
+.hero p.provider {
+  font-size: 1rem;
+  font-weight: 300;
 }

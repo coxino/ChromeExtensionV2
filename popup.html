@@ -6,13 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./popup.css" />
 </head>
-<body>  
-  <img src="./images/icon.png"> 
-  <div class="update-box">
+<body>
+    <div class="hero">
+    <img id="currentGameIcon" src="image.jpg" alt="Hero Image">
+    <div class="hero-content">
+      <h1 id="currentGameName" class="name"></h1>
+      <p id="currentGameProvider" class="provider"></p>
+      <p id="currentGameRecord" class="record"></p>
+    </div>
+  </div>
+  <div id="login-box" class="">
+    <input id="token" type="text" placeholder="your-api-token">
+    <button id="save-btn" type="button">SAVE</button>
+  </div>
+  <div id="update-box" class="update-box">
     <h4>Game Update</h4> 
     <div class="status">
-      <img id="green-dot" class="hidden" src="https://miro.medium.com/max/512/1*nZ9VwHTLxAfNCuCjYAkajg.png">
-      <h4 id="message"></h4>
+      <img id="green-dot" class="" src="https://miro.medium.com/max/512/1*nZ9VwHTLxAfNCuCjYAkajg.png">
+      <h4 id="message">Waiting Login</h4>
     </div>    
   </div>
   <script src="./popup.js" type="module"></script>
