@@ -83,8 +83,10 @@ function notify(_message,_icon){
 
 function getRecord(rounds)
 {
-    var best_pay = rounds.map(x=>x.payAmount).reduce((a,b)=>Math.max(a,b));
-    var best_x = rounds.map(x=>x.multiplier).reduce((a,b)=>Math.max(a,b));
-
-    return Intl.NumberFormat('en-US').format(best_pay);
+    if(rounds.length > 0){
+        var best_pay = rounds?.map(x=>x.payAmount)?.reduce((a,b)=>Math.max(a,b,0)) ?? 0;
+        var best_x = rounds?.map(x=>x.multiplier)?.reduce((a,b)=>Math.max(a,b,0)) ?? 0;
+    }
+    
+    return Intl.NumberFormat('en-US').format(best_pay ?? 0);
 }

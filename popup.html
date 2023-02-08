@@ -13,9 +13,30 @@
       <h1 id="currentGameName" class="name"></h1>
       <p id="currentGameProvider" class="provider"></p>
       <p id="currentGameRecord" class="record"></p>
-    </div>
+    </div>   
   </div>
-  <div id="login-box" class="">
+  <div class="tab">
+    <button id="gamerecord-button" class="tablinks">Game Record</button>
+    <button id="bonushunt-button" class="tablinks">Bonus Hunt</button>
+    <button id="tournament-button" class="tablinks" disabled>Tournament</button>
+  </div>
+
+  <div id="gamerecord" class="tabcontent">
+    <div class="label">
+      <div class="title">Save New Record</div>
+      <input id="record" type="text" class="input">
+      <button id="recordsave" type="button" class="input">Save</button>
+    </div>  
+  </div>  
+  <div id="bonushunt" class="tabcontent">
+    <div class="label">
+      <div class="title">Bet</div>
+      <input id="record" type="number" class="input">
+      <button id="bhsave" type="button" class="input">Add/Update</button>
+    </div>  
+  </div> 
+ 
+  <div id="login-box" class="">   
     <input id="token" type="text" placeholder="your-api-token">
     <button id="save-btn" type="button">SAVE</button>
   </div>
@@ -27,6 +48,6 @@
     </div>    
   </div>
   <script src="./popup.js" type="module"></script>
-  <script src="./background.js" type="module"></script>
+  <script src="./background.js" type="module"></script>  
 </body>
 </html>

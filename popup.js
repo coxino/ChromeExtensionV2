@@ -36,10 +36,6 @@ function getServerStatus()
     });
 }
 
-document.getElementById("save-btn").addEventListener('click',(event)=>{
-    setServerAccessToken();
-})
-
 function setServerAccessToken(){
     var token = document.getElementById("token").value;
     document.getElementById("login-box").classList.add("hidden");
@@ -74,6 +70,34 @@ function refreshGame(){
         document.getElementById("currentGameName").innerText = localStorage["currentGameName"];
         document.getElementById("currentGameIcon").src = localStorage["currentGameIcon"];
         document.getElementById("currentGameProvider").innerText = localStorage["currentGameProvider"];
-        document.getElementById("currentGameRecord").innerText = localStorage["currentGameRecord"];
+        document.getElementById("currentGameRecord").innerText = "Record " + localStorage["currentGameRecord"];
     });
 }
+
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+//EVENTS
+
+document.getElementById("save-btn").addEventListener('click',(event)=>{
+    setServerAccessToken();
+})
+
+document.getElementById("gamerecord-button").addEventListener('click',(event)=>{
+     openCity(event, 'gamerecord')
+})
+
+document.getElementById("bonushunt-button").addEventListener('click',(event)=>{
+    openCity(event, 'bonushunt')
+})

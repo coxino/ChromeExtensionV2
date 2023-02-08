@@ -15,7 +15,9 @@ limitations under the License.
 */
 
 body {
-  background-color: bisque;
+  background-color: #1f2e1f;
+  color: white;
+  border-radius: 1rem;
   width: 15rem;  
   height: 5rem; 
 }
@@ -56,7 +58,8 @@ img{
 }
 
 .hero {
-  background-color: rgba(34, 58, 58, 0.397); 
+  border: 1px solid violet;
+  background-color: rgba(140, 255, 255, 0.397); 
   border-radius: 1rem;
   display: grid;
   grid-template-columns: repeat(2,1fr);
@@ -82,4 +85,71 @@ img{
 .hero p.provider {
   font-size: 1rem;
   font-weight: 300;
+}
+
+.label
+{  
+  padding: 4px;
+  border: 1px solid violet;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+}
+.input
+{
+ 
+  padding: 4px;
+  width: 100%;
+  font-size: medium;
+  border: 1px solid white;
+  border-radius: 1rem;
+}
+
+.title
+{
+  font-size: large;
+  grid-column: span 2;
+}
+
+
+
+.tab {
+  margin-top: 4px;
+  margin-left: -5%;
+  overflow: hidden;
+  display: flex;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  padding: 4px;
+  width: 110%;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: small;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
 }
