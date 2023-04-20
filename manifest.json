@@ -13,12 +13,21 @@
     "default_popup": "popup.html"
   },
   "host_permissions": [
-    "https://developer.chrome.com/*"
+    "https://developer.chrome.com/*",
+    "https://coxino.ro/*",
+    
+    "https://superbet.ro/joc/*",
+    "https://mrbit.ro/en/games/*",
+    "https://ro.betano.com/casino/games/*",
+    "https://conticazino.ro/casino/*",
+    "https://online.getsbet.ro/casino/*",
+    "https://winboss.ro/en/casino-games/slots/*",
+    "https://www.cashpot.ro/games/*"
   ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js"    
   },
   "permissions": [
-    "tabs","storage","notifications"
+    "tabs","storage","notifications","activeTab", "scripting"
   ]
 }

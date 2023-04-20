@@ -5,49 +5,67 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./popup.css" />
+  <script src="./popup.js" type="module"></script>
+  <script src="./background.js" type="module"></script>  
 </head>
 <body>
-    <div class="hero">
-    <img id="currentGameIcon" src="image.jpg" alt="Hero Image">
+  <div class="hero">
+    <img id="currentGameIcon" src="./images/icon.png" alt="Hero Image">
     <div class="hero-content">
-      <h1 id="currentGameName" class="name"></h1>
-      <p id="currentGameProvider" class="provider"></p>
-      <p id="currentGameRecord" class="record"></p>
+      <h1 id="currentGameName" class="name">Stream Companion</h1>
+      <p id="currentGameProvider" class="provider">BRTECHS .RO</p>
+      <p id="currentGameRecord" class="record">COXINO.RO</p>
     </div>   
   </div>
-  <div class="tab">
+  <div id="tab-changer" class="tab hidden">
+    <button id="manualgame-button" class="tablinks">Manual Change</button>
     <button id="gamerecord-button" class="tablinks">Game Record</button>
     <button id="bonushunt-button" class="tablinks">Bonus Hunt</button>
-    <button id="tournament-button" class="tablinks" disabled>Tournament</button>
+    <button id="tournament-button" class="tablinks" disabled>Bonus Tournament</button>
   </div>
-
+  
+  <div id="manualgame" class="tabcontent">
+    <div class="label">
+      <div class="title">Manual Change Game</div>     
+      <!-- <h3>Game</h3>  -->
+      <input class="input" id="manualgamename" list="all-games" placeholder="Start typing...">
+      <datalist style="max-height:150px" id="all-games">
+        
+      </datalist>   
+      <button id="manualgamesave" type="button" class="save-btn">Save</button>      
+    </div>  
+    <h3 id="recordError"></h3>
+  </div>  
   <div id="gamerecord" class="tabcontent">
     <div class="label">
-      <div class="title">Save New Record</div>
-      <input id="record" type="text" class="input">
-      <button id="recordsave" type="button" class="input">Save</button>
+      <div class="title">Save New Record For Curent Game</div>
+      <h3>Ammount</h3>
+      <input id="currGameRecord" type="text" class="input">
+      <h3>Bet</h3>
+      <input id="currRecordBet" type="text" class="input" value="8">
+      <button id="recordsave" type="button" class="save-btn">Save</button>      
     </div>  
+    <h3 id="recordError"></h3>
   </div>  
   <div id="bonushunt" class="tabcontent">
     <div class="label">
-      <div class="title">Bet</div>
-      <input id="record" type="number" class="input">
-      <button id="bhsave" type="button" class="input">Add/Update</button>
+      <div class="title">Add Current Game To Bonus Hunt</div>
+      <h3>Bet</h3>
+      <input id="currBet" type="text" class="input">
+      <button id="bhsave" type="button" class="save-btn">Add/Update</button>
     </div>  
+    <h3 id="recordError"></h3>
+  </div>  
+  <div id="login-box" class="hidden"> 
+    <h3>Token: </h3> 
+    <input name="token" id="token" type="text" class="input" placeholder="your-api-token">
+    <button id="save-btn" class="save-btn" type="button">SAVE</button>
+  </div>
+  <div id="update-box" class="update-box">   
+    <div class="div">Status: </div>
+    <div id="message" class="hold">Waiting Casino Page</div>   
+    <div id="dot" class="dot"></div>
   </div> 
- 
-  <div id="login-box" class="">   
-    <input id="token" type="text" placeholder="your-api-token">
-    <button id="save-btn" type="button">SAVE</button>
-  </div>
-  <div id="update-box" class="update-box">
-    <h4>Game Update</h4> 
-    <div class="status">
-      <img id="green-dot" class="" src="https://miro.medium.com/max/512/1*nZ9VwHTLxAfNCuCjYAkajg.png">
-      <h4 id="message">Waiting Login</h4>
-    </div>    
-  </div>
-  <script src="./popup.js" type="module"></script>
-  <script src="./background.js" type="module"></script>  
+  
 </body>
 </html>
